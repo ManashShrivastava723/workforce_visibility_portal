@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workforce Visibility Portal</title>
+    <style>
+        body {font-family: Arial; margin: 40px;}
+        .card {
+            display:inline-block;
+            padding:20px;
+            margin:10px;
+            background:#f2f2f2;
+            border-radius:8px;
+            text-align:center;
+            width:150px;
+        }
+        table {
+            border-collapse: collapse;
+            width:100%;
+            margin-top:20px;
+        }
+        th, td {
+            border:1px solid #ccc;
+            padding:8px;
+            text-align:left;
+        }
+        th {background:#e6e6e6;}
+    </style>
+</head>
+<body>
+ 
+<h2>Workforce Visibility Dashboard</h2>
+ 
+<div class="card">Total<br><b>{{ total }}</b></div>
+<div class="card">Available<br><b>{{ available }}</b></div>
+<div class="card">Deployed<br><b>{{ deployed }}</b></div>
+<div class="card">Partial<br><b>{{ partial }}</b></div>
+<div class="card">Roll-offs<br><b>{{ rollout }}</b></div>
+ 
+<h3>Employee Details</h3>
+ 
+<table>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Skill</th>
+<th>Experience</th>
+<th>Status</th>
+<th>Project</th>
+<th>Roll-off</th>
+</tr>
+ 
+{% for e in employees %}
+<tr>
+<td>{{ e[0] }}</td>
+<td>{{ e[1] }}</td>
+<td>{{ e[2] }}</td>
+<td>{{ e[3] }}</td>
+<td>{{ e[4] }}</td>
+<td>{{ e[5] }}</td>
+<td>{{ e[6] }}</td>
+</tr>
+{% endfor %}
+</table>
+ 
+</body>
+</html>
